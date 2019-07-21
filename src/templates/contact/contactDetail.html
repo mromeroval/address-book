@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+{% block content %}
+   	
+    <div class="card border-dark">
+		<div class="card-header">{{ title }}</div>
+		<div class="card-body">
+			
+			<table class="table table-condensed table-hover">	
+				<tr>
+          <td>
+					  <label>Name : </label>
+          </td>
+          <td>
+					  {{ contact.first_name }}&nbsp; {{ contact.last_name }}
+					</td>
+				</tr>
+				
+				<tr>
+          <td>
+					  <label>Email : </label>
+          </td>
+          <td>
+					{{ contact.email}}
+					</td>
+				</tr>
+				
+				<tr>
+          <td>
+					<label>Position : </label>
+          </td>
+          <td>
+					{{  contact.position }}
+					</td>
+				</tr>
+							
+				<tr>
+          <td>
+					  <label>Dept. : </label>
+          </td>
+          <td>
+					  {{ contact.department }}
+					</td>
+				</tr>
+
+				<tr>
+          <td>
+					  <label>Email : </label>
+          </td>
+          <td>
+					  {{ contact.email }}
+					</td>
+				</tr>
+				
+				<tr>
+          <td>
+					  <label>Phone Number : </label>
+          </td>
+          <td>
+					  {{ contact.phone }}
+				</tr>
+				
+				<tr>
+          <td>
+					  <label>Office Location : </label>
+          </td>
+          <td>
+					  {{ contact.office_location }}
+					</td>
+				</tr>
+				
+				<tr>
+          <td>
+					  <label>Executive : </label>
+          </td>
+          <td>
+            {% if contact.executive == 1 %}
+            <input type="checkbox" checked="checked" disabled="disabled"> Yes
+            {% else %}
+            <input type="checkbox" disabled="disabled"> No
+            {% endif %}
+					</td>
+				</tr>
+				
+				<tr>
+          <td>
+					  <label>Executive Assistant : </label>
+          </td>
+          <td>
+            {% if contact.executive_assistant == 1 %}
+            <input type="checkbox" checked="checked" disabled="disabled"> Yes
+            {% else %}
+            <input type="checkbox" disabled="disabled"> No
+            {% endif %}
+					</td>
+				</tr>
+				
+				<tr>
+          <td>
+					  <label>Supports : </label>
+          </td>
+          <td>
+					  {{ contact.supports }}
+					</td>
+				</tr>
+				
+				<tr>
+          <td>
+					  <label>Supported By : </label>
+          </td>
+          <td>
+					  {{ contact.supported_by }}
+					</td>
+				</tr>
+				
+				<tr>
+          <td>
+					  <label>Space Available : </label>
+          </td>
+          <td>
+					  {{ contact.space_available }}
+					</td>
+				</tr>
+				
+				
+				<tr>
+          <td>
+					  <label>Notes : </label>
+          </td>
+          <td>
+					  {{ contact.notes }}
+					</td>
+				</tr>
+				
+				<tr>
+          <td>
+				  	<label>Active : </label>
+          </td>
+          <td>
+            {% if contact.active == 1 %}
+            <input type="checkbox" checked="checked" disabled="disabled"> Yes
+            {% else %}
+            <input type="checkbox" disabled="disabled"> No
+            {% endif %}
+          </td>
+				</tr>
+
+				<tr>
+					<td>
+						<label>Admin. :</label>
+					</td>
+					<td>
+						{% if contact.admin == 1 %}
+						<input type="checkbox" checked="checked" disabled="disabled"> Yes
+						{% else %}
+						<input type="checkbox" disabled="disabled"> No
+						{% endif %}
+					</td>	
+				</tr>
+
+			</table>
+		</div>
+	</div>
+
+{% endblock %}

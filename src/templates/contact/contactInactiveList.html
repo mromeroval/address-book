@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+
+	<div class="card border-dark">
+			<div class="card-header">
+        <ul class="nav nav-tabs">
+            <li class="nav-item"><a class="nav-link" href="{% url 'contact:activelist' %}">Active Contacts</a></li> 
+            <li class="nav-item"><a class="nav-link active" href="#"><strong>Inactive Contacts</strong></a></li>
+        </ul>
+			</div>
+			<div class="card-body table-responsive-md">
+
+        <table class="table table-hover">
+          <tr>
+            <th>#</th><th>Name</th><th>Last Name</th><th>Position</th><th>Department</th><th>Show</th><th>Edit</th>
+          </tr>
+          {% for contact in queryset_contacts %}
+          <tr>
+            <td>{{ forloop.counter  }}</td>
+            <td>{{ contact.first_name }}</td>
+            <td>{{ contact.last_name }}</td>
+            <td>{{ contact.position }}</td>
+            <td>{{ contact.department }}</td>
+            <td><a href="{% url 'contact:detail' contact.id %}" class="btn btn-secondary btn-sm">Show</a></td>
+            <td><a href="{% url 'contact:edit' contact.id %}" class="btn btn-secondary btn-sm">Edit</a></td>
+          </tr>								
+          {% endfor %}				
+        </table>
+
+		</div><!-- . card body-->
+	</div> <!-- . card -->	
+
+{% endblock %}

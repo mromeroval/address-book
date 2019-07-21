@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card border-dark">
+    		<div class="card-header">
+          <i class="fas fa-user"></i>&nbsp;Contacts
+        </div>
+        <div class="card-body text-dark">
+          <div  class="list-group">
+            
+            <a href="{% url 'contact:search' %}" class="list-group-item list-group-item-action">
+              <i class="fas fa-search"></i>&nbsp;Search Contact
+            </a>
+
+            <a href="{% url 'contact:activelist' %}" class="list-group-item list-group-item-action">
+              <i class="fas fa-list"></i>&nbsp;List Contacts
+            </a>
+
+            <a href="{% url 'contact:create' %}" class="list-group-item list-group-item-action">
+              <i class="far fa-plus-square"></i>&nbsp;Create Contact
+            </a>
+        </div>
+      </div>
+</div>  		  		
+
+{% endblock %}

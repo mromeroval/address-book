@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="card-deck">
+	<div class="card border-dark mb-3" style="max-width: 19rem;">
+		<div class="card-header">
+			Search by Name 
+		</div>
+		<div class="card-body text-dark">
+			<form method="get" action="{% url 'contact:searchresult' %}">
+				{% csrf_token %}
+        {% crispy nameForm %}
+			</form>
+		</div>
+	</div> 
+	
+  <div class="card border-dark mb-3" style="max-width: 19rem;">
+		<div class="card-header">
+			 Search by Department
+		</div>
+		<div class="card-body text-dark">
+			<form method="get" action="{% url 'contact:searchresult' %}">
+				{% csrf_token %}
+				{% crispy departmentForm %}
+			</form>
+		</div>
+	</div>
+	
+  <div class="card border-dark mb-3" style="max-width: 19rem;">
+		<div class="card-header">
+			 Search by Position
+		</div>
+		<div class="card-body text-dark">
+			<form method="get" action="{% url 'contact:searchresult' %}">
+				{% csrf_token %}
+				{% crispy positionForm %}
+			</form>
+		</div>
+  </div>
+
+</div>
+
+{% endblock %}
