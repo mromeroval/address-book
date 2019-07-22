@@ -1,1 +1,1 @@
-web: gunicorn address_book.wsgi --log-file -
+web: gunicorn src.address_book.wsgi --log-file -
