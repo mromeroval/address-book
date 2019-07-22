@@ -17,7 +17,7 @@ SECRET_KEY = '&*+7%#o)td^i8x+ry&60l@7e^=2$jw&=nzj7**9+x&8e_a#4lo'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [ 'localhost','127.0.0.1']
+ALLOWED_HOSTS = [ 'localhost', '0.0.0.0', 'address-book-mr.herokuapp.com/']
 
 
 
@@ -78,10 +78,20 @@ WSGI_APPLICATION = 'address_book.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, '../db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'tle-test',
+        'USER': 'tle-test-user',
+        'PASSWORD': 'K7dwTcJ3H27g',
+        'HOST': '107.180.48.109',
+        'PORT': '',
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, '../db.sqlite3'),
+#     }
+# }
 
 
 # Password validation
