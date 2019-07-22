@@ -79,10 +79,10 @@ WSGI_APPLICATION = 'address_book.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'tle-test',
-        'USER': 'tle-test-user',
-        'PASSWORD': 'K7dwTcJ3H27g',
-        'HOST': '107.180.48.109',
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': os.environ.get('DB_HOST'),
         'PORT': '',
     }
 }
