@@ -7,30 +7,29 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="Mauricio Romero">
-
-    <title>Executive Assistant Directory</title>
+    <title>Address Book App</title>
     {% include 'head_css.html' %}
-
   </head>
 
   <body>
     {% include 'navbar.html'%}
-    
-    <br><br>
+    <br>
     <div class="container">
-    	
-    	<div class="panel panel-warning">
-    		<div class="panel-heading">
-    			<h3>Login</h3>
+      <div class="d-flex justify-content-center">
+    	<div class="card panel-warning">
+    		<div class="card-header">
+    			Login
     		</div>
-    		<div  class="panel-body">
-    			you are not authorized to access this page, please login.
-  			<h3><a href="{% url 'home' %}" class="btn btn-lg btn-warning" >Log in</a></h3>
-  			</div>
+    		<div  class="card-body">
+          <p>Welcome to the Addres Book Web Application.</p>
+          <p>Please login.</p>
+        </div>
+        <div class="card-footer text-center">
+          <a href="{% url 'home' %}" class="btn btn-warning">Log in</a>
+        </div>
   		</div>
-
+    </div>
     </div> <!-- /container -->
-
 {% include "footer.html" %}
   </body>
 </html>
